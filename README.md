@@ -10,8 +10,6 @@
 
 ### 👥 Integrantes do Grupo
 
-* **Ana Julia Santiago** — GitHub: [@anajsv](https://github.com/anajsv)
-* **Cauã Henrique Feitosa de Souza** — GitHub: [@cahenq](https://github.com/cahenq)
 * **Gustavo Amaral Dias** — GitHub: [@pacmanmg](https://github.com/pacmanmg)
 * **Marcelly Yasmim Portela Trindade** — GitHub: [@EllyMarc](https://github.com/EllyMarc)
 * **Samuel Gomes Cunha** — GitHub: [@Samuel-Amadio](https://github.com/Samuel-Amadio)
