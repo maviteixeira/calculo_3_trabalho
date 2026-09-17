@@ -36,7 +36,7 @@ def calcular_erro_percentual(v_estimado, v_referencia):
     return (abs(v_estimado - v_referencia) / v_referencia) * 100.0
 
             
-# bloco de teste local (Esse bloco de teste só vai funcionar aqui)
+# bloco de teste local (Esse bloco de teste só vai funcionar nesse arquivo aqui)
 if __name__ == "__main__":
     print("Testezinho")
 
