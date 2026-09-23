@@ -115,18 +115,25 @@ Possível stack inicial:
 A estrutura inicial do projeto será organizada da seguinte forma:
 
 ```text
-├── src/
-│   ├── main.py
-│   ├── calculus.py
-│   ├── model.py
+├── models/
+│   └── model.py
+│
+├── volumetry/
+│   └── monte_carlo.py
+│
+├── visualization/
 │   └── visualization.py
 │
-├── docs/
-│   └──
+├── utils/
+│   └── volume.py
 │
 ├── tests/
-│   └──
+│   └── test_integracao_monte_carlo.py
 │
+├── docs/
+│   └── relatorio_link
+│
+├── app.py
 ├── README.md
 ├── requirements.txt
 └── .gitignore
@@ -134,17 +141,17 @@ A estrutura inicial do projeto será organizada da seguinte forma:
 
 ### Descrição inicial
 
-* `src/` — Código-fonte da aplicação;
-* `main.py` — Ponto de entrada do programa;
-* `calculus.py` — Implementação dos cálculos matemáticos;
-* `model.py` — Definição do modelo matemático e/ou geométrico;
-* `visualization.py` — Recursos de visualização gráfica e tridimensional;
+* `models/` — Definição do modelo matemático e/ou geométrico e geração das malhas 3D (Rayssa);
+* `volumetry/` — Métodos computacionais de volumetria, como Monte Carlo (Marcelly);
+* `visualization/` — Recursos de visualização gráfica e tridimensional, Plotly (Rayssa);
+* `utils/` — Fundamentação matemática e volume de referência por integração (Gustavo);
+* `tests/` — Testes e validação da aplicação, comparação matemático × computacional (Samuel);
 * `docs/` — Documentação e materiais complementares;
-* `tests/` — Testes da aplicação;
+* `app.py` — Ponto de entrada da aplicação (Streamlit), integra os módulos (Maria Vitória);
 * `requirements.txt` — Dependências do projeto;
 * `README.md` — Documentação principal do projeto.
 
-> A estrutura poderá ser modificada conforme o escopo da aplicação for definido.
+> Estrutura alinhada ao planejamento definido em equipe (documento de organização do VoluLab).
 
 ---
 
