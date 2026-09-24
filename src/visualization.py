@@ -1,1 +1,0 @@
-# Apoio visual (Plotly e exibição de pontos dentro/fora)

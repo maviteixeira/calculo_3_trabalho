@@ -1,1 +1,0 @@
-# Frente da Rayssa (Geração das malhas 3D)
