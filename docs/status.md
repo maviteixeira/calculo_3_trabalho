@@ -56,8 +56,6 @@ Registradas em [docs/decisoes/](decisoes/README.md):
 
 ### Para fechar a Issue #3
 
-- [ ] Enviar as branches `develop` e `chore/estrutura-inicial` para o GitHub
-- [ ] Abrir o PR para a `develop` e conseguir a revisão de outra pessoa
 - [ ] Criar as Issues #4 a #9 no GitHub
 - [ ] Avisar o Gustavo sobre a substituição da branch dele
 
