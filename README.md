@@ -1,4 +1,4 @@
-# 📐 Modelagem e Volumetria Computacional
+# 📐 VoluLab — Laboratório computacional para análise volumétrica de estruturas arquitetônicas
 
 ## 🏫 Informações Institucionais
 
@@ -98,95 +98,109 @@ Os modelos matemáticos serão traduzidos para uma solução computacional, perm
 
 ## 🛠️ Tecnologias e Dependências
 
-> **As tecnologias definitivas serão definidas durante a etapa de desenvolvimento.**
-
-Possível stack inicial:
-
-* **Linguagem:** Python
-* **Cálculo Numérico:** NumPy
-* **Visualização:** Matplotlib
-* **Visualização 3D:** Matplotlib 3D e/ou biblioteca a ser definida
+* **Linguagem:** Python 3.11+
+* **Cálculo numérico:** NumPy
+* **Visualização 3D:** Plotly
+* **Interface:** Streamlit
+* **Testes:** pytest
 * **Controle de versão:** Git e GitHub
+
+As dependências estão em `requirements.txt` (aplicação) e `requirements-dev.txt` (aplicação + testes).
 
 ---
 
 ## 📂 Estrutura do Repositório
 
-A estrutura inicial do projeto será organizada da seguinte forma:
-
 ```text
-├── src/
-│   ├── main.py
-│   ├── calculus.py
-│   ├── model.py
-│   └── visualization.py
-│
+├── app.py                     # Interface Streamlit (só chama os módulos)
+├── volulab/
+│   ├── models/                # Estruturas 3D e contrato Solido (Rayssa)
+│   │   ├── base.py
+│   │   └── comodo_retangular.py
+│   ├── utils/                 # Fórmulas analíticas / volume de referência (Gustavo)
+│   │   └── formulas.py
+│   ├── volumetry/             # Monte Carlo e erro percentual (Marcelly)
+│   │   └── monte_carlo.py
+│   └── visualization/         # Figuras 3D com Plotly (Rayssa)
+│       └── plot3d.py
+├── tests/                     # Testes com pytest (Samuel)
 ├── docs/
-│   └──
-│
-├── tests/
-│   └──
-│
-├── README.md
+│   ├── arquitetura.md         # Fluxo entre módulos e como adicionar estruturas
+│   ├── roadmap.md             # Níveis 1 a 4
+│   ├── matematica/            # Desenvolvimento das integrais
+│   ├── decisoes/              # Registro de decisões
+│   ├── reunioes/              # Atas e status semanal
+│   └── relatorio_link
+├── .github/                   # Modelos de Issue e Pull Request
+├── CONTRIBUTING.md            # Fluxo de trabalho com Git
 ├── requirements.txt
-└── .gitignore
+├── requirements-dev.txt
+└── pyproject.toml             # Configuração do pytest
 ```
 
-### Descrição inicial
+### Descrição
 
-* `src/` — Código-fonte da aplicação;
-* `main.py` — Ponto de entrada do programa;
-* `calculus.py` — Implementação dos cálculos matemáticos;
-* `model.py` — Definição do modelo matemático e/ou geométrico;
-* `visualization.py` — Recursos de visualização gráfica e tridimensional;
-* `docs/` — Documentação e materiais complementares;
-* `tests/` — Testes da aplicação;
-* `requirements.txt` — Dependências do projeto;
-* `README.md` — Documentação principal do projeto.
+* `app.py` — Ponto de entrada da aplicação (Streamlit); integra os módulos (Maria Vitória);
+* `volulab/models/` — Estruturas arquitetônicas; toda estrutura implementa o contrato `Solido` (Rayssa);
+* `volulab/utils/` — Fundamentação matemática: fórmulas analíticas e limites de integração (Gustavo);
+* `volulab/volumetry/` — Métodos computacionais de volumetria (Monte Carlo) e erro percentual (Marcelly);
+* `volulab/visualization/` — Representação tridimensional com Plotly (Rayssa);
+* `tests/` — Testes e validação: comparação matemático × computacional (Samuel);
+* `docs/` — Documentação técnica e materiais complementares (Samuel).
 
-> A estrutura poderá ser modificada conforme o escopo da aplicação for definido.
+Detalhes em [docs/arquitetura.md](docs/arquitetura.md). Fluxo de contribuição em [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ---
 
 ## 🚀 Como Executar o Projeto
 
-> **Esta seção será atualizada após a implementação do protótipo.**
-
 ### 1. Clonar o Repositório
 
 ```bash
-git clone https://github.com/[organização-ou-usuario]/[nome-do-repositorio].git
-cd [nome-do-repositorio]
+git clone https://github.com/maviteixeira/calculo_3_trabalho.git
+cd calculo_3_trabalho
 ```
 
 ### 2. Criar o Ambiente Virtual
 
+Requer Python 3.11 ou superior.
+
 ```bash
-python -m venv venv
+python -m venv .venv
 ```
 
 No Windows:
 
 ```bash
-venv\Scripts\activate
+.venv\Scripts\activate
 ```
 
 No Linux/macOS:
 
 ```bash
-source venv/bin/activate
+source .venv/bin/activate
 ```
 
 ### 3. Instalar as Dependências
 
 ```bash
-pip install -r requirements.txt
+pip install -r requirements-dev.txt
 ```
+
+(Para só executar o app, sem testes: `pip install -r requirements.txt`.)
 
 ### 4. Executar a Aplicação
 
 ```bash
-python src/main.py
+streamlit run app.py
+```
+
+O app abre no navegador (normalmente em `http://localhost:8501`).
+
+### 5. Rodar os Testes
+
+```bash
+pytest
 ```
 
 ---
